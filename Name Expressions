@@ -1,0 +1,23 @@
+Name Expression
+else{
+	 $Name=Test_User_Input($_POST['NameG']);
+	 if(!preg_match('/^[A-Za-z .]*$/', $Name)){
+	 	$NameError="Enter Valid Name";
+	}
+  
+Email Expression
+else{
+	 $Email=Test_User_Input($_POST['EmailG']);
+	 if(!preg_match('/[A-Za-z0-9._-]{3,}@[A-Za-z0-9._-]{3,}[.][A-Za-z0-9._-]{2,}/', $Email)){
+	 	$EmailError="Enter Valid Email";	
+	 }
+   
+Website Expression
+if(empty($_POST['WebsiteG'])){
+		$WebsiteError="Website is Requried";
+	}
+	else{
+		$Website=Test_User_Input($_POST['WebsiteG']);
+	if(!preg_match('/(https:|ftp:)\/\/+[a-zA-Z0-9\-_%\$\/?\#\~!=&+*.]+\.[a-zA-Z0-9\-_%\$\/?\#\~!=&+*.]*/',$Website)){
+			$WebsiteError="Enter Valid Website";	
+	}
